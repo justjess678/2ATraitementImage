@@ -1,0 +1,17 @@
+image1 = double(imread('TP02I01.jpg'));
+a=1;
+palette=uint8(((double([0:255]')./255).^(1/a)).*255);
+image(image1);
+transfert(palette);
+Imin=min(min(image1));
+Imax=max(max(image1));
+ExDy=zeros(size(image1,1),size(image1,2));
+for row=1:size(image1,1)
+    for col=1:size(image1,2)
+          ExDy(row,col)=(image1(row,col)-Imin)/(Imax-Imin)*255;
+      end
+end
+pal=
+palette=uint8(((double([0:255]')./255).^(1/a)).*255);%modifier
+image(image1);
+transfert(palette);
